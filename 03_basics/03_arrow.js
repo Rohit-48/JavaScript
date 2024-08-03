@@ -1,54 +1,47 @@
 const user = {
-    username: "hitesh",
-    price: 999,
+    username: "Rohit",
+    Price: 999,
 
-    welcomeMessage: function() {
-        console.log(`${this.username} , welcome to website`);
+    welcomeMessage: function () {
+        console.log(`${this.username}, welcome to Website`);
         console.log(this);
+        
+        
     }
-
 }
 
+
 // user.welcomeMessage()
-// user.username = "sam"
+// user.username = "Sam"
 // user.welcomeMessage()
+
 
 // console.log(this);
 
-// function chai(){
-//     let username = "hitesh"
+
+// function Chai() {
 //     console.log(this.username);
+    
 // }
+// Chai()
 
-// chai()
 
-// const chai = function () {
-//     let username = "hitesh"
-//     console.log(this.username);
-// }
 
-const chai =  () => {
-    let username = "hitesh"
-    console.log(this);
+const chai = ()=>{
+    let username = "Rohit"
+    console.log(this.username);
+    
 }
 
 
 // chai()
 
-// const addTwo = (num1, num2) => {
-//     return num1 + num2
-// }
 
-// const addTwo = (num1, num2) =>  num1 + num2
+// const addOne = (num1, num2) => num1 + num2;   // Implicit Line Return
+// const addTwo = (num1, num2) => (num1 + num2);   // Implicit Line Return, Most important for React.js
 
-// const addTwo = (num1, num2) => ( num1 + num2 )
+const addThree = (num1, num2) => ({username: "Rohit"})
 
-const addTwo = (num1, num2) => ({username: "hitesh"})
+// console.log(addOne(4, 3));
+console.log(addThree(4, 3));
 
-
-console.log(addTwo(3, 4))
-
-
-// const myArray = [2, 5, 3, 7, 8]
-
-// myArray.forEach()

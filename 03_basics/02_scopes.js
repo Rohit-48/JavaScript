@@ -14,6 +14,9 @@ if (true) {
 // console.log(c);
 
 
+/**
+ * Function one.
+ */
 function one(){
     const username = "hitesh"
 
