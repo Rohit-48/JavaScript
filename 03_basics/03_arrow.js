@@ -1,3 +1,10 @@
+/**
+ * Represents a user.
+ * @typedef {Object} User
+ * @property {string} username - The username of the user.
+ * @property {number} Price - The price associated with the user.
+ * @property {Function} welcomeMessage - A function that logs a welcome message to the console.
+ */
 const user = {
     username: "Rohit",
     Price: 999,
