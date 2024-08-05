@@ -1,4 +1,4 @@
-w# Learning JavaScript
+# Learning JavaScript
 
 Welcome to the **Learning JavaScript** repository! This repository is designed to help you learn and practice JavaScript programming. Whether you are a beginner or an experienced developer, this repository has something for everyone.
 
