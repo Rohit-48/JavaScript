@@ -1,11 +1,12 @@
 # Projects Related to DOM
 
-## Project Link 
+## Project Link
+
 [click Here](https://stackblitz.com/edit/dom-project-chaiaurcode?file=index.html)
 
-#  Solution Code 
+## Solution Code
 
-## Project 1 
+### Project 1
 
 ```JavaScript
 const buttons = document.querySelectorAll('.button');
@@ -35,5 +36,3 @@ buttons.forEach(function (button) {
     }
   });
 });
-
-```
