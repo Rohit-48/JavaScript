@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+</head>
+<body>
+
+    <h1>Hello</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHello =  function() {
+        console.log("Hello World");   
+    }
+    setTimeout(sayHello, 2000);
+
+    const changeText = function () {
+        document.querySelector('h1').innerHTML = "Welcome To Enigma Lab"
+    }
+    const changeMe = setTimeout(changeText, 2000)
+
+    
+    document.querySelector('#stop').addEventListener('click', function () {
+        clearTimeout(changeMe)
+        console.log("hi");
+        
+    })
+</script>
+
+</html>

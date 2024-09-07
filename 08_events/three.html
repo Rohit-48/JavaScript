@@ -1,0 +1,69 @@
+<!-- 
+
+This HTML file contains a simple web page with two buttons: "Start" and "Stop". 
+When the "Start" button is clicked, the background color of the page changes every second to a randomly generated color.
+When the "Stop" button is clicked, the color changing stops.
+
+Elements:
+- <h1>: Displays "Hello world".
+- <button id="stop">: Button to stop changing the background color.
+- <button id="start">: Button to start changing the background color.
+
+JavaScript Functions:
+- randColor: Generates a random hex color code.
+- startChangingColor: Starts the interval to change the background color every second.
+- stopChangingColor: Stops the interval that changes the background color.
+
+Event Listeners:
+- 'click' event on the "Start" button to trigger startChangingColor function.
+- 'click' event on the "Stop" button to trigger stopChangingColor function.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+</head>
+<body>
+
+    <h1>Hello world</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+
+</body>
+<script>
+    // generate color
+
+const randColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (i = 0; i < 6; i++) {
+    color += [Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+let intervalId;
+const startChangingColor = function () {
+
+    if (!intervalId) {
+        intervalId = setInterval(changeColor, 1000);
+    }
+  function changeColor() {
+    document.body.style.backgroundColor = randColor();
+  }
+};
+const stopChangingColor = function () {
+  clearInterval(intervalId);
+  intervalId = null;
+};
+
+document.querySelector('#start').addEventListener('click', startChangingColor);
+
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+    
+   
+</script>
+
+</html>
