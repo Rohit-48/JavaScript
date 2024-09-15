@@ -1,5 +1,3 @@
-Here's a cleaned-up version of your markdown document:
-
 # JavaScript and Classes
 
 ## Object-Oriented Programming (OOP)
