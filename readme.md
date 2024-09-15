@@ -9,19 +9,6 @@ Welcome to the **Learning JavaScript** repository! This repository is designed t
 - [Resources](#resources)
 - [License](#license)
 
-## Topics Covered
-This repository covers a wide range of JavaScript topics, including but not limited to:
-
-- Variables and data types
-- Control flow and loops
-- Functions and scope
-- Arrays and objects
-- DOM manipulation
-- Asynchronous programming
-- Error handling
-- And much more!
-
-
 ## Resources
 Here are some additional resources to enhance your JavaScript learning journey:
 
