@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Music Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Music Player $</h1>
+        <div id="buttons"></div>
+    </div>
+
+    <script>
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+        const notes = [
+            { name: 'C', frequency: 261.63 },
+            { name: 'D', frequency: 293.66 },
+            { name: 'E', frequency: 329.63 },
+            { name: 'F', frequency: 349.23 },
+            { name: 'G', frequency: 392.00 },
+            { name: 'A', frequency: 440.00 },
+            { name: 'B', frequency: 493.88 }
+        ];
+
+        function playNote(frequency) {
+            const oscillator = audioContext.createOscillator();
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+            
+            const gainNode = audioContext.createGain();
+            gainNode.gain.setValueAtTime(0.5, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.5);
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.start();
+            oscillator.stop(audioContext.currentTime + 0.5);
+        }
+
+        function createButtons() {
+            const buttonContainer = document.getElementById('buttons');
+            notes.forEach(note => {
+                const button = document.createElement('button');
+                button.textContent = note.name;
+                button.addEventListener('click', () => playNote(note.frequency));
+                buttonContainer.appendChild(button);
+            });
+        }
+
+        createButtons();
+    </script>
+</body>
+</html>
